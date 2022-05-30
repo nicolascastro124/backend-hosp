@@ -1,0 +1,38 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "App para Hospital",
+      "version": "1.0.0",
+      "description": "Node with express Api",
+      "termsOfService": "http://example.com/terms/",
+      "contact": {
+        "name": "Api Support",
+        "email": "nicolascastro124@gmail.com"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8002/api",
+        "description": "My API Documentation Developer Server"
+      },
+      {
+        "url": "https://hfb-app.herokuapp.com/",
+        "description": "Production Server"
+      }
+    ],
+    "security": [{"ApiKey" :[] } ],
+    "components": {
+      "securitySchemes": {
+        "ApiKey": {
+          "type": "apiKey",
+          "in": "header",
+          "name": "authtoken"
+        }
+      }
+    }
+  },
+  "apis": [
+    "./routes/*.js"
+  ]
+}

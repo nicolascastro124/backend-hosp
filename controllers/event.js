@@ -55,14 +55,14 @@ exports.read = async (req, res) => {
 
 //Actualizar 
 exports.update = async (req, res) => {
-  const { name, date, descrip, acciones, status } = req.body;
+  const { name, rut , date, descrip, acciones, status } = req.body;
   try {
     if (req.body.title) {
       req.body.slug = slugify(req.body.title);
     }
     const updated = await Event.findOneAndUpdate(
       { slug: req.params.slug },
-      { name, slug: slugify(name), date, descrip, acciones, status },
+      { name, slug: slugify(rut), date, descrip, acciones, status },
       { new: true }
     ).exec();
     res.json(updated);

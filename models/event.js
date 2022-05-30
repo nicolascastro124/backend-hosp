@@ -15,7 +15,6 @@ const eventSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    service: [{ type: ObjectId, ref: "Servicio" }],
     descrip: {
         type: String,
     },
